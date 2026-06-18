@@ -2,58 +2,275 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    <!-- ====== SEO & META ====== -->
     <title>Лендінг за 100 грн | Професійна розробка сайтів та автоматизація</title>
     <meta name="description" content="Потрібен лендінг за 100 грн? Створюємо швидкі сайти-візитки, портфоліо та автоматизацію заявок. Без абонплати. Один платіж — і сайт ваш!">
     <meta name="keywords" content="лендінг, сайт візитка, замовити лендінг, сайт за 100 грн, автоматизація заявок, Telegram бот, розробка сайтів, швидкий лендінг, створення сайтів, веб-студія, таргет, ssm, реклама">
+    <link rel="canonical" href="https://landing-page-eosin-rho-82.vercel.app">
+
+    <!-- ====== OPEN GRAPH (Прев'юшка) ====== -->
+    <meta property="og:image" content="https://raw.githubusercontent.com/Metaimperiya/landing-page/main/screenshot-1781765378528.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:title" content="Лендінг за 100 грн | Професійна розробка">
     <meta property="og:description" content="Швидкі сайти за 100 грн. Один платіж — і сайт ваш назавжди!">
-    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://landing-page-eosin-rho-82.vercel.app">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- ====== СТРУКТУРОВАНІ ДАНІ (JSON-LD) ====== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Лендінг за 100 грн",
+      "description": "Створення лендінгів, сайтів-візиток та автоматизація бізнесу.",
+      "url": "https://landing-page-eosin-rho-82.vercel.app",
+      "telephone": "+380685742713",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "UA"
+      }
+    }
+    </script>
+
     <style>
-        :root { --orange: #ff8c00; --black: #111; --gray: #222; }
-        * { box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; background: var(--black); color: #fff; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; overflow-x: hidden; }
-        
-        header { width: 100%; background: #000; padding: 25px 0; text-align: center; border-bottom: 4px solid var(--orange); }
-        h1 { margin: 0; font-size: 1.6rem; text-transform: uppercase; }
-        
-        /* 3D Облако (Контейнер) */
-        #myCanvasContainer { width: 100%; max-width: 550px; height: 350px; margin: 10px auto; cursor: move; }
-        #myCanvas { width: 100%; height: 100%; }
+        :root {
+            --orange: #ff8c00;
+            --black: #0a0a0a;
+            --gray: #1a1a1a;
+            --white: #ffffff;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            line-height: 1.6;
+            padding-bottom: 100px;
+        }
+
+        /* Сучасний хедер */
+        header {
+            width: 100%;
+            background: linear-gradient(135deg, #000 0%, #1a0a00 100%);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--orange);
+            box-shadow: 0 4px 30px rgba(255, 140, 0, 0.3);
+        }
+        header h1 {
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, var(--orange), #ffaa33);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 40px rgba(255, 140, 0, 0.2);
+        }
+        header p {
+            color: #aaa;
+            font-size: 1rem;
+            margin-top: 5px;
+            -webkit-text-fill-color: #aaa;
+        }
+
+        /* ====== БІГУЧА СТРІЧКА ====== */
+        .marquee-container {
+            width: 100%;
+            background: var(--orange);
+            color: #000;
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 10px rgba(255, 140, 0, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .marquee {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+            padding-left: 100%;
+        }
+        .marquee span {
+            margin: 0 30px;
+        }
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+
+        /* 3D Облако */
+        #myCanvasContainer {
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            margin: 0 auto;
+            cursor: grab;
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
+            border-radius: 20px;
+            box-shadow: inset 0 0 50px rgba(255, 140, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        #myCanvasContainer:active { cursor: grabbing; }
+        #myCanvas { width: 100%; height: 100%; display: block; }
         #tags { display: none; }
 
-        .container { width: 100%; max-width: 600px; padding: 20px; }
-        
-        /* Аккордеон услуг */
-        .accordion { width: 100%; margin-bottom: 40px; }
-        .acc-item { border: 1px solid #333; margin-bottom: 5px; border-radius: 8px; overflow: hidden; }
-        .acc-btn { width: 100%; padding: 20px; background: #161616; color: #fff; border: none; text-align: left; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .acc-btn:hover { background: #222; }
-        .acc-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #0f0f0f; }
-        .acc-content p { padding: 15px 20px; color: #ccc; font-size: 0.9rem; }
+        .container {
+            width: 100%;
+            max-width: 650px;
+            padding: 20px;
+        }
 
-        /* Виджет и кнопка */
-        .widget-wrapper { margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #333; background: #fff; }
-        .tg-btn { display: block; width: 100%; padding: 18px; background: #0088cc; color: #fff; text-align: center; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 1.1rem; margin-bottom: 40px; border: 2px solid #fff; text-transform: uppercase; }
-        .tg-btn:hover { background: #00aaff; }
-        
-        /* Подвал и чат */
-        footer { width: 100%; max-width: 600px; padding: 20px; background: #050505; border-top: 2px solid var(--orange); margin-bottom: 80px; border-radius: 10px 10px 0 0; }
-        .display-window { height: 200px; background: #fff; color: #000; overflow-y: auto; padding: 10px; margin-bottom: 10px; border-radius: 5px; font-size: 0.9rem; }
-        .input-field { width: 100%; padding: 12px; margin-bottom: 8px; background: #333; color: #fff; border: 1px solid #444; border-radius: 6px; }
-        .send-btn { width: 100%; padding: 12px; background: var(--orange); border: none; font-weight: bold; cursor: pointer; border-radius: 6px; text-transform: uppercase; color: #000; }
-        .send-btn:hover { background: #ffaa00; }
+        .widget-wrapper {
+            margin-top: -30px;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+            background: #111;
+            padding: 5px;
+        }
 
-        .contact-bar { position: fixed; bottom: 0; width: 100%; max-width: 600px; background: var(--orange); color: #000; text-align: center; padding: 20px; font-weight: bold; z-index: 1000; text-decoration: none; font-size: 1.2rem; border-radius: 15px 15px 0 0; box-shadow: 0 -5px 15px rgba(0,0,0,0.3); }
+        /* Аккордеон */
+        .accordion { width: 100%; margin: 30px 0; }
+        .acc-item {
+            border: 1px solid #2a2a2a;
+            margin-bottom: 8px;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+            background: var(--gray);
+        }
+        .acc-item:hover { border-color: var(--orange); }
+        .acc-btn {
+            width: 100%;
+            padding: 18px 25px;
+            background: transparent;
+            color: var(--white);
+            border: none;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .acc-btn:hover { background: rgba(255, 140, 0, 0.1); }
+        .acc-btn span { color: var(--orange); transition: transform 0.3s; }
+        .acc-item.active .acc-btn span { transform: rotate(180deg); }
+        .acc-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #0f0f0f;
+        }
+        .acc-content p {
+            padding: 15px 25px;
+            color: #ccc;
+            font-size: 0.95rem;
+            border-top: 1px solid #222;
+        }
+
+        .tg-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(90deg, #0088cc, #00aaff);
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #ffffff30;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0, 136, 204, 0.3);
+            margin-bottom: 20px;
+        }
+        .tg-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 30px rgba(0, 136, 204, 0.5);
+            background: linear-gradient(90deg, #00aaff, #66d9ff);
+        }
+
+        /* Контактна панель */
+        .contact-bar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 650px;
+            background: linear-gradient(90deg, #e67e00, var(--orange));
+            color: #000;
+            text-align: center;
+            padding: 18px;
+            font-weight: 700;
+            z-index: 1000;
+            text-decoration: none;
+            font-size: 1.3rem;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -10px 30px rgba(255, 140, 0, 0.4);
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+        .contact-bar:hover {
+            background: linear-gradient(90deg, #ff8c00, #ffaa33);
+            padding: 22px;
+        }
+
+        /* Адаптивність */
+        @media (max-width: 480px) {
+            header h1 { font-size: 1.6rem; }
+            #myCanvasContainer { height: 280px; }
+            .marquee-container { font-size: 0.85rem; padding: 10px 0; }
+            .contact-bar { font-size: 1.1rem; padding: 15px; }
+        }
     </style>
 </head>
 <body>
 
-<header><h1>Лендінг за 100 грн</h1></header>
+<header>
+    <h1>Лендінг за 100 грн</h1>
+    <p>Створюємо сайти, які продають</p>
+</header>
+
+<!-- ====== БІГУЧА СТРІЧКА ====== -->
+<div class="marquee-container">
+    <div class="marquee">
+        <span>🔥 Лендінг за 100 грн!</span>
+        <span>💰 Жодних абонплат!</span>
+        <span>⚡ Поповнили картку — сайт готовий!</span>
+        <span>🚀 Ідеально для бізнесу та соцмереж!</span>
+        <span>📱 Швидка розробка!</span>
+        <span>🔥 Лендінг за 100 грн!</span>
+        <span>💰 Жодних абонплат!</span>
+        <span>⚡ Поповнили картку — сайт готовий!</span>
+        <span>🚀 Ідеально для бізнесу та соцмереж!</span>
+        <span>📱 Швидка розробка!</span>
+    </div>
+</div>
 
 <div id="myCanvasContainer">
-    <canvas id="myCanvas"><p>Потрібен Canvas</p></canvas>
+    <canvas id="myCanvas"></canvas>
 </div>
 
 <div id="tags">
@@ -74,64 +291,126 @@
     <div class="widget-wrapper">
         <script async src="https://telegram.org/js/telegram-widget.js?23" data-telegram-post="sozdatlending/14" data-width="100%"></script>
     </div>
-    <a href="https://t.me/METAIMPERIYA" target="_blank" class="tg-btn">ЗАМОВИТИ ЗАРАЗ</a>
+
+    <a href="https://t.me/METAIMPERIYA" target="_blank" class="tg-btn">📩 Замовити зараз</a>
 
     <div class="accordion">
-        <div class="acc-item"><button class="acc-btn">1. Лендінг "Візитка" <span>▼</span></button><div class="acc-content"><p>Простий сайт-візитка для швидкого старту вашого бізнесу.</p></div></div>
-        <div class="acc-item"><button class="acc-btn">2. Портфоліо-лендінг <span>▼</span></button><div class="acc-content"><p>Ваші найкращі роботи та проекти в одному місці.</p></div></div>
-        <div class="acc-item"><button class="acc-btn">3. Прайс та Смета <span>▼</span></button><div class="acc-content"><p>Прозорий каталог послуг з актуальними цінами.</p></div></div>
-        <div class="acc-item"><button class="acc-btn">4. Лендінг "Презентація" <span>▼</span></button><div class="acc-content"><p>Стильна онлайн-презентація вашої компанії або продукту.</p></div></div>
-        <div class="acc-item"><button class="acc-btn">5. Автоматизація "Під ключ" <span>▼</span></button><div class="acc-content"><p>Сайт з інтеграцією Telegram-бота для прийому заявок 24/7.</p></div></div>
+        <div class="acc-item">
+            <button class="acc-btn">1. Лендінг "Візитка" <span>▼</span></button>
+            <div class="acc-content"><p>Простий, але стильний сайт-візитка для швидкого старту вашого бізнесу. Ідеально для фрілансерів та малих компаній.</p></div>
+        </div>
+        <div class="acc-item">
+            <button class="acc-btn">2. Портфоліо-лендінг <span>▼</span></button>
+            <div class="acc-content"><p>Продемонструйте ваші найкращі роботи та проекти. Візуальна платформа для залучення клієнтів.</p></div>
+        </div>
+        <div class="acc-item">
+            <button class="acc-btn">3. Прайс та Смета <span>▼</span></button>
+            <div class="acc-content"><p>Прозорий каталог ваших послуг з актуальними цінами. Зручно для клієнтів та економить ваш час.</p></div>
+        </div>
+        <div class="acc-item">
+            <button class="acc-btn">4. Лендінг "Презентація" <span>▼</span></button>
+            <div class="acc-content"><p>Стильна онлайн-презентація вашої компанії, продукту або послуги. Ефективно та сучасно.</p></div>
+        </div>
+        <div class="acc-item">
+            <button class="acc-btn">5. Автоматизація "Під ключ" <span>▼</span></button>
+            <div class="acc-content"><p>Повноцінний сайт з інтеграцією Telegram-бота для автоматичного прийому заявок 24/7. Працює, поки ви спите.</p></div>
+        </div>
     </div>
 </div>
 
-<footer>
-    <div style="color:var(--orange); font-weight:bold; margin-bottom:10px; text-align:center;">LIVE CHAT</div>
-    <div class="display-window" id="screen"></div>
-    <input type="text" id="nick" class="input-field" placeholder="Ім'я...">
-    <input type="text" id="message" class="input-field" placeholder="Питання...">
-    <button onclick="push()" class="send-btn">ВІДПРАВИТИ</button>
+<!-- ====== ФУТЕР ІЗ ЧАТОМ ====== -->
+<footer style="width:100%; max-width:650px; padding:25px; background:#0a0a0a; border-top:2px solid var(--orange); border-radius:20px 20px 0 0; margin-top:20px;">
+    <div style="color:var(--orange); font-weight:700; text-align:center; font-size:1.2rem; margin-bottom:15px; letter-spacing:2px;">💬 Live Chat</div>
+    <div id="screen" style="height:220px; background:#161616; color:#ddd; overflow-y:auto; padding:15px; margin-bottom:15px; border-radius:12px; font-size:0.9rem; border:1px solid #2a2a2a; scroll-behavior:smooth;"></div>
+    <input type="text" id="nick" style="width:100%; padding:14px 18px; margin-bottom:10px; background:#1a1a1a; color:#fff; border:1px solid #2a2a2a; border-radius:10px; font-size:1rem;" placeholder="Ваше ім'я..." value="Клієнт">
+    <input type="text" id="message" style="width:100%; padding:14px 18px; margin-bottom:10px; background:#1a1a1a; color:#fff; border:1px solid #2a2a2a; border-radius:10px; font-size:1rem;" placeholder="Напишіть ваше питання..." autocomplete="off">
+    <button onclick="push()" style="width:100%; padding:15px; background:linear-gradient(90deg, var(--orange), #ffaa33); border:none; font-weight:700; cursor:pointer; border-radius:12px; text-transform:uppercase; color:#000; font-size:1rem; transition:all 0.3s;">Відправити</button>
 </footer>
 
 <a href="tel:+380685742713" class="contact-bar">📞 068 574-27-13</a>
 
+<!-- ====== БІБЛІОТЕКИ ====== -->
 <script src="https://www.goat1000.com/tagcanvas.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
 
 <script>
-    // Инициализация 3D облака (Цвет изменен на ОРАНЖЕВЫЙ)
-    window.onload = function() { TagCanvas.Start('myCanvas','tags',{textColour: '#ff8c00', outlineColour: 'transparent', maxSpeed:0.03, initial:[0.05,0.05], textHeight:22, zoom:1.05, dragControl: true, decelerate: true}); };
-    
-    // Аккордеон
-    const btns = document.querySelectorAll('.acc-btn');
-    btns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const content = btn.nextElementSibling;
-            document.querySelectorAll('.acc-content').forEach(c => { if(c !== content) c.style.maxHeight = null; });
-            content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+    // ====== 3D Хмара тегів ======
+    window.onload = function() {
+        try {
+            TagCanvas.Start('myCanvas', 'tags', {
+                textColour: '#ff8c00',
+                outlineColour: 'transparent',
+                maxSpeed: 0.04,
+                initial: [0.05, 0.05],
+                textHeight: 24,
+                zoom: 1.1,
+                dragControl: true,
+                decelerate: true,
+                shuffleTags: true,
+                weight: true,
+                weightMode: 'size'
+            });
+        } catch(e) {
+            console.log('TagCanvas не завантажився:', e);
+        }
+    };
+
+    // ====== Аккордеон ======
+    document.querySelectorAll('.acc-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const parent = this.closest('.acc-item');
+            const content = parent.querySelector('.acc-content');
+            const isActive = parent.classList.contains('active');
+
+            document.querySelectorAll('.acc-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.acc-content').style.maxHeight = null;
+            });
+
+            if (!isActive) {
+                parent.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
         });
     });
 
-    // Firebase Чат (ПОЛНЫЙ СКРИПТ)
-    const firebaseConfig = { apiKey: "AIzaSyC5L2GQ-2CYj-GNYsHENASdvKVF68rsEb0", databaseURL: "https://metaimperiya-14d1b-default-rtdb.europe-west1.firebasedatabase.app", projectId: "metaimperiya-14d1b" };
+    // ====== Firebase ======
+    const firebaseConfig = {
+        apiKey: "AIzaSyC5L2GQ-2CYj-GNYsHENASdvKVF68rsEb0",
+        databaseURL: "https://metaimperiya-14d1b-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "metaimperiya-14d1b"
+    };
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
 
     function push() {
-        const u = document.getElementById('nick').value || 'Клієнт';
-        const m = document.getElementById('message').value;
-        if(m.trim() !== "") {
-            db.ref('chat_logs').push().set({ user: u, text: m, time: new Date().toLocaleTimeString() });
-            document.getElementById('message').value = '';
-        }
+        const nick = document.getElementById('nick').value.trim() || 'Клієнт';
+        const msg = document.getElementById('message').value.trim();
+        if (msg === '') return;
+
+        db.ref('chat_logs').push({
+            user: nick,
+            text: msg,
+            time: new Date().toLocaleTimeString('uk-UA', { hour: '2-digit', minute: '2-digit' })
+        });
+        document.getElementById('message').value = '';
     }
 
-    db.ref('chat_logs').on('value', (s) => {
+    db.ref('chat_logs').on('value', (snapshot) => {
         const screen = document.getElementById('screen');
         screen.innerHTML = '';
-        s.forEach(c => { const d = c.val(); screen.innerHTML += `<div><b>${d.user}:</b> ${d.text} <span style="font-size:0.7rem; color:#888;">${d.time}</span></div>`; });
+        snapshot.forEach(child => {
+            const data = child.val();
+            const div = document.createElement('div');
+            div.innerHTML = `<b>${data.user}:</b> ${data.text} <span style="font-size:0.7rem; color:#666; margin-left:8px;">${data.time}</span>`;
+            screen.appendChild(div);
+        });
         screen.scrollTop = screen.scrollHeight;
+    });
+
+    document.getElementById('message').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') push();
     });
 </script>
 </body>
