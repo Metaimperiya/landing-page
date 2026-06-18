@@ -60,7 +60,6 @@
             padding-bottom: 100px;
         }
 
-        /* Сучасний хедер */
         header {
             width: 100%;
             background: linear-gradient(135deg, #000 0%, #1a0a00 100%);
@@ -85,7 +84,6 @@
             -webkit-text-fill-color: #aaa;
         }
 
-        /* ====== БІГУЧА СТРІЧКА ====== */
         .marquee-container {
             width: 100%;
             background: var(--orange);
@@ -112,7 +110,6 @@
             100% { transform: translate(-100%, 0); }
         }
 
-        /* 3D Облако */
         #myCanvasContainer {
             width: 100%;
             max-width: 600px;
@@ -147,7 +144,6 @@
             padding: 5px;
         }
 
-        /* Аккордеон */
         .accordion { width: 100%; margin: 30px 0; }
         .acc-item {
             border: 1px solid #2a2a2a;
@@ -189,7 +185,7 @@
             border-top: 1px solid #222;
         }
 
-        /* ====== ОНОВЛЕНА КНОПКА ТЕЛЕГРАМ ====== */
+        /* ====== КНОПКА ТЕЛЕГРАМ ====== */
         .tg-btn {
             display: block;
             width: 100%;
@@ -214,7 +210,6 @@
             background: linear-gradient(90deg, #00aaff, #66d9ff);
         }
 
-        /* Контактна панель */
         .contact-bar {
             position: fixed;
             bottom: 0;
@@ -238,7 +233,6 @@
             padding: 22px;
         }
 
-        /* Адаптивність */
         @media (max-width: 480px) {
             header h1 { font-size: 1.6rem; }
             #myCanvasContainer { height: 280px; }
@@ -255,7 +249,6 @@
     <p>Створюємо сайти, які продають</p>
 </header>
 
-<!-- ====== БІГУЧА СТРІЧКА ====== -->
 <div class="marquee-container">
     <div class="marquee">
         <span>🔥 Лендінг за 100 грн!</span>
@@ -294,7 +287,7 @@
         <script async src="https://telegram.org/js/telegram-widget.js?23" data-telegram-post="sozdatlending/14" data-width="100%"></script>
     </div>
 
-    <!-- ====== НОВА КНОПКА З ВАШИМ ПОСИЛАННЯМ ====== -->
+    <!-- ====== КНОПКА ВЕДЕ НА ВАШ КАНАЛ ====== -->
     <a href="https://t.me/nuzhenodnostranichnyysayt" target="_blank" class="tg-btn">📩 Замовити зараз</a>
 
     <div class="accordion">
@@ -321,7 +314,6 @@
     </div>
 </div>
 
-<!-- ====== ФУТЕР ІЗ ЧАТОМ ====== -->
 <footer style="width:100%; max-width:650px; padding:25px; background:#0a0a0a; border-top:2px solid var(--orange); border-radius:20px 20px 0 0; margin-top:20px;">
     <div style="color:var(--orange); font-weight:700; text-align:center; font-size:1.2rem; margin-bottom:15px; letter-spacing:2px;">💬 Live Chat</div>
     <div id="screen" style="height:220px; background:#161616; color:#ddd; overflow-y:auto; padding:15px; margin-bottom:15px; border-radius:12px; font-size:0.9rem; border:1px solid #2a2a2a; scroll-behavior:smooth;"></div>
@@ -332,13 +324,11 @@
 
 <a href="tel:+380685742713" class="contact-bar">📞 068 574-27-13</a>
 
-<!-- ====== БІБЛІОТЕКИ ====== -->
 <script src="https://www.goat1000.com/tagcanvas.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
 
 <script>
-    // ====== 3D Хмара тегів ======
     window.onload = function() {
         try {
             TagCanvas.Start('myCanvas', 'tags', {
@@ -359,7 +349,6 @@
         }
     };
 
-    // ====== Аккордеон ======
     document.querySelectorAll('.acc-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             const parent = this.closest('.acc-item');
@@ -378,7 +367,6 @@
         });
     });
 
-    // ====== Firebase ======
     const firebaseConfig = {
         apiKey: "AIzaSyC5L2GQ-2CYj-GNYsHENASdvKVF68rsEb0",
         databaseURL: "https://metaimperiya-14d1b-default-rtdb.europe-west1.firebasedatabase.app",
